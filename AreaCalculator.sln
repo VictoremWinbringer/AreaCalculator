@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaCalculator", "src\AreaCalculator\AreaCalculator.csproj", "{EF995A9F-20C4-458F-93D8-DD1EB64A70ED}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{E438DC9D-B85F-4107-9D6A-417EAF66118E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{DF458086-F474-4187-BEAD-6E9C1A66BF78}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaCalculator.Tests", "test\AreaCalculator.Tests\AreaCalculator.Tests.csproj", "{829AADA0-D1DB-4BDC-957E-1013E01A4E13}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AreaCalculator.Lib", "src\AreaCalculator.Lib\AreaCalculator.Lib.csproj", "{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EF995A9F-20C4-458F-93D8-DD1EB64A70ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EF995A9F-20C4-458F-93D8-DD1EB64A70ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EF995A9F-20C4-458F-93D8-DD1EB64A70ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EF995A9F-20C4-458F-93D8-DD1EB64A70ED}.Release|Any CPU.Build.0 = Release|Any CPU
+		{829AADA0-D1DB-4BDC-957E-1013E01A4E13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{829AADA0-D1DB-4BDC-957E-1013E01A4E13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{829AADA0-D1DB-4BDC-957E-1013E01A4E13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{829AADA0-D1DB-4BDC-957E-1013E01A4E13}.Release|Any CPU.Build.0 = Release|Any CPU
+		{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{EF995A9F-20C4-458F-93D8-DD1EB64A70ED} = {E438DC9D-B85F-4107-9D6A-417EAF66118E}
+		{829AADA0-D1DB-4BDC-957E-1013E01A4E13} = {DF458086-F474-4187-BEAD-6E9C1A66BF78}
+		{319F6A77-8FAC-45A9-B69E-6F1A4F3E2E9A} = {E438DC9D-B85F-4107-9D6A-417EAF66118E}
+	EndGlobalSection
+EndGlobal
