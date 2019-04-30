@@ -1,6 +1,6 @@
 namespace AreaCalculator.Lib
 {
-    public interface IWithSquare
+    public interface IFigure
     {
         Length Square { get; }
     }

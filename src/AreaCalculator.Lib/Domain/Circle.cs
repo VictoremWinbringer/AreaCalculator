@@ -2,7 +2,7 @@ using System;
 
 namespace AreaCalculator.Lib
 {
-    public sealed class Circle : IWithSquare
+    public sealed class Circle : IFigure
     {
         public Circle(Length radius)
         {

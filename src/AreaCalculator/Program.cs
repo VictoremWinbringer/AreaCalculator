@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using AreaCalculator.Lib;
 
 namespace AreaCalculator
 {
@@ -6,7 +8,12 @@ namespace AreaCalculator
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+               List<IFigure> figures = new List<IFigure>()
+               {
+                   new Circle(new Length(2)),
+                   new Triangle(new Length(2), new Length(2), new Length(2))
+               };
+                figures.ForEach(f=> Console.WriteLine(f.Square.Value.ToString()));
         }
     }
 }

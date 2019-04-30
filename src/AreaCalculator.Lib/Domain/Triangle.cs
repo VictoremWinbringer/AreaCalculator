@@ -3,7 +3,11 @@ using System.Linq;
 
 namespace AreaCalculator.Lib
 {
-    public sealed class Triangle : IWithSquare
+    interface ITriangle:IFigure
+    {
+       bool IsRightAngled { get; }
+    }
+    public sealed class Triangle : ITriangle
     {
         public Length ASideLength { get; }
         public Length BSideLength { get; }
