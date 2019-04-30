@@ -4,13 +4,13 @@ namespace AreaCalculator.Lib
 {
     public sealed class Circle : IWithSquare
     {
-        public Circle(FigureProp radius)
+        public Circle(Length radius)
         {
             Radius = radius;
         }
 
-        public FigureProp Radius { get; }
+        public Length Radius { get; }
 
-        public FigureProp Square => new FigureProp(Radius.Value * Radius.Value * Math.PI);
+        public Length Square => new Length(Radius.Value * Radius.Value * Math.PI);
     }
 }

@@ -2,11 +2,11 @@ using System;
 
 namespace AreaCalculator.Lib
 {
-    public sealed class FigurePropIsNotGreaterThanZeroException : Exception
+    public sealed class LengthIsNotGreaterThanZeroException : Exception
     {
         public double Radius { get; }
 
-        public FigurePropIsNotGreaterThanZeroException(double radius)
+        public LengthIsNotGreaterThanZeroException(double radius)
         {
             Radius = radius;
         }
