@@ -15,6 +15,11 @@ namespace AreaCalculator.Lib
 
         public Triangle(Length a, Length b, Length c)
         {
+            if (!((a.Value < b.Value+c.Value) && 
+                  (b.Value < a.Value+c.Value) && 
+                  (c.Value < a.Value+b.Value)))
+                throw new TriangleNotExistException(a.Value,b.Value,c.Value);
+                
             ASideLength = a;
             BSideLength = b;
             CSideLength = c;

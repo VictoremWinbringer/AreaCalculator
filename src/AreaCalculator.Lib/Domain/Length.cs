@@ -4,16 +4,16 @@ namespace AreaCalculator.Lib
     // Вообще надо у заказчика или аналитика подробнее про это спросить - нужны им фируры с нулевой длинной или нет.
     public struct Length
     {
-        private readonly double _prop;
+        private readonly double _value;
 
-        public Length(double radius)
+        public Length(double length)
         {
-            if (!(radius > 0))
-                throw new LengthIsNotGreaterThanZeroException(radius);
+            if (!(length > 0))
+                throw new LengthIsNotGreaterThanZeroException(length);
 
-            _prop = radius;
+            _value = length;
         }
 
-        public double Value => _prop;
+        public double Value => _value;
     }
 }
