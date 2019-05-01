@@ -4,9 +4,9 @@ namespace AreaCalculator.Lib
 {
     public sealed class Circle : IFigure
     {
-        public Circle(Length radius)
+        public Circle(double radius)
         {
-            Radius = radius;
+            Radius = new Length(radius);
         }
 
         public Length Radius { get; }

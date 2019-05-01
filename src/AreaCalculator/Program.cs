@@ -10,8 +10,8 @@ namespace AreaCalculator
         {
                List<IFigure> figures = new List<IFigure>()
                {
-                   new Circle(new Length(2)),
-                   new Triangle(new Length(2), new Length(2), new Length(2))
+                   new Circle(2),
+                   new Triangle(2, 3, 4)
                };
                 figures.ForEach(f=> Console.WriteLine(f.Square.Value.ToString()));
         }

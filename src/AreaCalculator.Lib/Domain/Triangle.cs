@@ -3,26 +3,27 @@ using System.Linq;
 
 namespace AreaCalculator.Lib
 {
-    interface ITriangle:IFigure
+    interface ITriangle : IFigure
     {
-       bool IsRightAngled { get; }
+        bool IsRightAngled { get; }
     }
+
     public sealed class Triangle : ITriangle
     {
         public Length ASideLength { get; }
         public Length BSideLength { get; }
         public Length CSideLength { get; }
 
-        public Triangle(Length a, Length b, Length c)
+        public Triangle(double a, double b, double c)
         {
-            if (!((a.Value < b.Value+c.Value) && 
-                  (b.Value < a.Value+c.Value) && 
-                  (c.Value < a.Value+b.Value)))
-                throw new TriangleNotExistException(a.Value,b.Value,c.Value);
-                
-            ASideLength = a;
-            BSideLength = b;
-            CSideLength = c;
+            if (!((a < b + c) &&
+                  (b < a + c) &&
+                  (c < a + b)))
+                throw new TriangleNotExistException(a, b, c);
+
+            ASideLength = new Length(a);
+            BSideLength = new Length(b);
+            CSideLength = new Length(c);
         }
 
         public Length Square
@@ -31,7 +32,7 @@ namespace AreaCalculator.Lib
             {
                 var p = (ASideLength.Value + BSideLength.Value + CSideLength.Value) / 2;
                 return new Length(Math.Sqrt(p * (p - ASideLength.Value) * (p - BSideLength.Value) *
-                                                (p - CSideLength.Value)));
+                                            (p - CSideLength.Value)));
             }
         }
 
@@ -46,11 +47,11 @@ namespace AreaCalculator.Lib
                         CSideLength
                     }.OrderByDescending(fp => fp.Value)
                     .ToArray();
-                
+
                 var c = sides[0].Value;
                 var b = sides[1].Value;
                 var a = sides[2].Value;
-                
+
                 return Math.Abs((c * c) - (a * a + b * b)) < 0.000001;
             }
         }

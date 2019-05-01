@@ -10,7 +10,7 @@ namespace AreaCalculator.Tests
         public void CalculateValidSquare()
         {
             var radius = 1d;
-            var circle = new Circle(new Length(radius));
+            var circle = new Circle(radius);
             var actual = circle.Square.Value;
             var expected = radius * radius * Math.PI;
             Assert.Equal(expected,actual, 3);

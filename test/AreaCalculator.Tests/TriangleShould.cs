@@ -8,7 +8,7 @@ namespace AreaCalculator.Tests
         [Fact]
         public void CalculateValidSquare()
         {
-            var triangle = new Triangle(new Length(2), new Length(2), new Length(2));
+            var triangle = new Triangle(2, 2, 2);
             var expected = 1.73d;
             Assert.Equal(expected, triangle.Square.Value,2);
         }
@@ -17,20 +17,20 @@ namespace AreaCalculator.Tests
         public void DontCreateNotValidTriangle()
         {
             Assert.Throws<TriangleNotExistException>(()=>
-                new Triangle(new Length(1), new Length(2), new Length(3)));
+                new Triangle(1, 2, 3));
         }
 
         [Fact]
         public void RightAngledPropertyReturnFalseForNotRightAngled()
         {
-            var triangle = new Triangle(new Length(2), new Length(2), new Length(2));
+            var triangle = new Triangle(2, 2, 2);
             Assert.False(triangle.IsRightAngled);
         }
         
         [Fact]
         public void RightAngledPropertyReturnTrueForRightAngled()
         {
-            var triangle = new Triangle(new Length(3), new Length(4), new Length(5));
+            var triangle = new Triangle(3, 4, 5);
             Assert.True(triangle.IsRightAngled);
         }
     }
