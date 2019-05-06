@@ -4,10 +4,10 @@ using Xunit;
 
 namespace AreaCalculator.Tests
 {
-    public class LengthShould
+    public class GreaterThanZeroDoubleShould
     {
         [Fact]
-        public void DontCrateNotValidLength()
+        public void DontCrateNotValidValue()
         {
             Assert.Throws<IsNotGreaterThanZeroException>(() =>
             {
