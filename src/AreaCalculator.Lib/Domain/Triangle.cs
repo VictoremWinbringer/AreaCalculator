@@ -8,11 +8,11 @@ namespace AreaCalculator.Lib
         bool IsRightAngled { get; }
     }
 
-    public sealed class Triangle : ITriangle
+    public class Triangle : ITriangle
     {
-        public Length ASideLength { get; }
-        public Length BSideLength { get; }
-        public Length CSideLength { get; }
+        public GreaterThanZeroDouble ASideLength { get; }
+        public GreaterThanZeroDouble BSideLength { get; }
+        public GreaterThanZeroDouble CSideLength { get; }
 
         public Triangle(double a, double b, double c)
         {
@@ -21,17 +21,17 @@ namespace AreaCalculator.Lib
                   (c < a + b)))
                 throw new TriangleNotExistException(a, b, c);
 
-            ASideLength = new Length(a);
-            BSideLength = new Length(b);
-            CSideLength = new Length(c);
+            ASideLength = new GreaterThanZeroDouble(a);
+            BSideLength = new GreaterThanZeroDouble(b);
+            CSideLength = new GreaterThanZeroDouble(c);
         }
 
-        public Length Square
+        public GreaterThanZeroDouble Square
         {
             get
             {
                 var p = (ASideLength.Value + BSideLength.Value + CSideLength.Value) / 2;
-                return new Length(Math.Sqrt(p * (p - ASideLength.Value) * (p - BSideLength.Value) *
+                return new GreaterThanZeroDouble(Math.Sqrt(p * (p - ASideLength.Value) * (p - BSideLength.Value) *
                                             (p - CSideLength.Value)));
             }
         }

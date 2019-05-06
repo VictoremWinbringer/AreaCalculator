@@ -2,15 +2,15 @@ using System;
 
 namespace AreaCalculator.Lib
 {
-    public sealed class Circle : IFigure
+    public class Circle : IFigure
     {
         public Circle(double radius)
         {
-            Radius = new Length(radius);
+            Radius = new GreaterThanZeroDouble(radius);
         }
 
-        public Length Radius { get; }
+        public GreaterThanZeroDouble Radius { get; }
 
-        public Length Square => new Length(Radius.Value * Radius.Value * Math.PI);
+        public GreaterThanZeroDouble Square => new GreaterThanZeroDouble(Radius.Value * Radius.Value * Math.PI);
     }
 }

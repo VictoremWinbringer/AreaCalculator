@@ -9,9 +9,9 @@ namespace AreaCalculator.Tests
         [Fact]
         public void DontCrateNotValidLength()
         {
-            Assert.Throws<LengthIsNotGreaterThanZeroException>(() =>
+            Assert.Throws<IsNotGreaterThanZeroException>(() =>
             {
-                var length = new Length(-1);
+                var length = new GreaterThanZeroDouble(-1);
             });
         }
 
@@ -19,7 +19,7 @@ namespace AreaCalculator.Tests
         public void ValueReturnExpectedValue()
         {
             var value = 1;
-            var length = new Length(value);
+            var length = new GreaterThanZeroDouble(value);
             Assert.Equal(value,length.Value, 1);
         }
     }

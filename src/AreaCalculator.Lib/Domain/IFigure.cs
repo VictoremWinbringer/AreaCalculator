@@ -2,6 +2,6 @@ namespace AreaCalculator.Lib
 {
     public interface IFigure
     {
-        Length Square { get; }
+        GreaterThanZeroDouble Square { get; }
     }
 }
