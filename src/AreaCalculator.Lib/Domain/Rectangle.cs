@@ -1,9 +1,15 @@
-﻿namespace AreaCalculator.Lib
+﻿using System;
+
+namespace AreaCalculator.Lib
 {
     public sealed class Rectangle : Shape
     {
         public Rectangle(double height, double width)
         {
+            if (height <= 0)
+                throw new ArgumentOutOfRangeException(nameof(height));
+            if (width <= 0)
+                throw new ArgumentOutOfRangeException(nameof(width));
             Height = height;
             Width = width;
         }

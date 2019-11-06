@@ -2,6 +2,6 @@
 {
     public abstract class ShapeCreator
     {
-        public abstract Shape Create();
+        public abstract Shape Create(string imput);
     }
 }

@@ -1,17 +1,15 @@
-﻿namespace AreaCalculator.Lib
+﻿using System;
+
+namespace AreaCalculator.Lib
 {
     public sealed class CircleCreator : ShapeCreator
     {
-        public CircleCreator(double radius)
+        public override Shape Create(string input)
         {
-            Radius = radius;
-        }
-
-        private double Radius { get; }
-
-        public override Shape Create()
-        {
-            return new Circle(Radius);
+            input = input?.Trim();
+            if (!double.TryParse(input, out var radius))
+                throw new ArgumentException($"{nameof(Circle)} Input: {input} for double radius has bad format");
+            return new Circle(radius);
         }
     }
 }

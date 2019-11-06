@@ -1,5 +1,7 @@
 ﻿using AreaCalculator.Lib;
+using AreaCalculator.Lib.Domain;
 using System;
+using System.Collections.Generic;
 
 namespace AreaCalculator
 {
@@ -7,13 +9,20 @@ namespace AreaCalculator
     {
         static void Main()
         {
-
-            BaseShapeFactory factory = new ShapeFactory();
+            var factory = new ShapeFactory();
             while (true)
             {
-                var input = Console.ReadLine();
-                var shape = factory.Create(input);
-                Console.WriteLine($"Area:{shape.Area.Value}, Perimeter: {shape.Perimeter.Value}");
+                try
+                {
+                    var input = Console.ReadLine();
+                    var shape = factory.Create(input);
+                    Console.WriteLine($"Area:{shape.Area}, Perimeter: {shape.Perimeter}");
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine(ex.Message);
+                }
+
             }
         }
     }
