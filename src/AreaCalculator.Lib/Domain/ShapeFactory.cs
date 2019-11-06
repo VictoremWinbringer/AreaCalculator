@@ -4,9 +4,10 @@ using System.Linq;
 
 namespace AreaCalculator.Lib
 {
-    public sealed class ShapeFactory
+
+    public sealed class ShapeFactory : BaseShapeFactory
     {
-        public Shape Create(string input)
+        public override Shape Create(string input)
         {
             if (string.IsNullOrWhiteSpace(input))
                 throw new ArgumentNullException(nameof(input));

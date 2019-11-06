@@ -10,7 +10,7 @@ namespace AreaCalculator
         static void Main()
         {
 
-            var factory = new ShapeFactory();
+            BaseShapeFactory factory = new ShapeFactory();
             while (true)
             {
                 var circle = Console.ReadLine();
