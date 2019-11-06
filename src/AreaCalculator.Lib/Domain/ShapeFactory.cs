@@ -23,7 +23,11 @@ namespace AreaCalculator.Lib
         private Rectangle CreateRectangle(string input)
         {
             var args = input.Split("x", StringSplitOptions.RemoveEmptyEntries);
-            return new Rectangle(new Height(double.Parse(args[0])), new Width(double.Parse(args[1])));
+            return new Rectangle(CreateHeight(args), CreateWidth(args));
         }
+
+        private Height CreateHeight(string[] input) => new Height(double.Parse(input[0]));
+        private Width CreateWidth(string[] input) => new Width(double.Parse(input[1]));
+
     }
 }
