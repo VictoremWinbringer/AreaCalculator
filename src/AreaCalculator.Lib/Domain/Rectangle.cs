@@ -16,7 +16,7 @@ namespace AreaCalculator.Lib
 
         public override Perimeter Perimeter => new Perimeter((Height.Value + Width.Value) * 2);
 
-        public Height Height { get; }
-        public Width Width { get; }
+        private Height Height { get; }
+        private Width Width { get; }
     }
 }

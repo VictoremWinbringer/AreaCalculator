@@ -9,7 +9,7 @@ namespace AreaCalculator.Lib
             Radius = radius ?? throw new ArgumentNullException(nameof(radius)) { Source = typeof(Circle).FullName };
         }
 
-        public Radius Radius { get; }
+        private Radius Radius { get; }
 
         public override Area Area => new Area(Radius.Value * Radius.Value * Math.PI);
 
