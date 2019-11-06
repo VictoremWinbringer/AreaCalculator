@@ -2,16 +2,16 @@
 {
     public sealed class CircleCreator : ShapeCreator
     {
-        public CircleCreator(Radius radius)
+        public CircleCreator(double radius)
         {
             Radius = radius;
         }
 
-        private Radius Radius { get; }
+        private double Radius { get; }
 
         public override Shape Create()
         {
             return new Circle(Radius);
         }
-    }    
+    }
 }

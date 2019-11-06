@@ -4,15 +4,17 @@ namespace AreaCalculator.Lib
 {
     public sealed class Circle : Shape
     {
-        public Circle(Radius radius)
+        public Circle(double radius)
         {
-            Radius = radius ?? throw new ArgumentNullException(nameof(radius)) { Source = typeof(Circle).FullName };
+            if (radius <= 0)
+                throw new ArgumentOutOfRangeException(nameof(radius));
+            Radius = radius;
         }
 
-        private Radius Radius { get; }
+        private double Radius { get; }
 
-        public override Area Area => new Area(Radius.Value * Radius.Value * Math.PI);
+        public override double Area => Radius * Radius * Math.PI;
 
-        public override Perimeter Perimeter => new Perimeter(Radius.Value * 2 * Math.PI);
+        public override double Perimeter => Radius * 2 * Math.PI;
     }
 }

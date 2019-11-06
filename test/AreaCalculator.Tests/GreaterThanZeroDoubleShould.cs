@@ -1,5 +1,4 @@
 using System;
-using AreaCalculator.Lib;
 using Xunit;
 
 namespace AreaCalculator.Tests
