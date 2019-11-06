@@ -8,17 +8,21 @@ namespace AreaCalculator.Lib
     {
         public Shape Create(string input)
         {
-            return input?
+            if (string.IsNullOrWhiteSpace(input))
+                throw new ArgumentNullException(nameof(input));
+            return input
                 .Split(":", System.StringSplitOptions.RemoveEmptyEntries)
                 .Select(s => s.Trim().ToLower())
                 .ToArray()
                  switch
             {
-                var args when args.Length == 2 && args[0] == "circle" => (Shape)new Circle(new Radius(double.Parse(args[1]))),
+                var args when args.Length == 2 && args[0] == "circle" => (Shape)CreateCircle(args[1]),
                 var args when args.Length == 2 && args[0] == "rectangle" => CreateRectangle(args[1]),
                 _ => throw new NotImplementedException(input) { Source = typeof(ShapeFactory).FullName }
             };
         }
+
+        private Circle CreateCircle(string input) => new Circle(new Radius(double.Parse(input)));
 
         private Rectangle CreateRectangle(string input)
         {
