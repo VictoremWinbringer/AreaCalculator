@@ -2,15 +2,17 @@ using System;
 
 namespace AreaCalculator.Lib
 {
-    public class Circle : IFigure
+    public sealed class Circle : Shape
     {
-        public Circle(double radius)
+        public Circle(Radius radius)
         {
-            Radius = new GreaterThanZeroDouble(radius);
+            Radius = radius ?? throw new ArgumentNullException(nameof(radius)) { Source = typeof(Circle).FullName };
         }
 
-        public GreaterThanZeroDouble Radius { get; }
+        public Radius Radius { get; }
 
-        public GreaterThanZeroDouble Square => new GreaterThanZeroDouble(Radius.Value * Radius.Value * Math.PI);
+        public override Area Area => new Area(Radius.Value * Radius.Value * Math.PI);
+
+        public override Perimeter Perimeter => new Perimeter(Radius.Value * 2 * Math.PI);
     }
 }

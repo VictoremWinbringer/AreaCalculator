@@ -9,7 +9,7 @@ namespace AreaCalculator.Tests
         [Fact]
         public void DontCrateNotValidValue()
         {
-            Assert.Throws<IsNotGreaterThanZeroException>(() =>
+            Assert.Throws<ArgumentOutOfRangeException>(() =>
             {
                 var length = new GreaterThanZeroDouble(-1);
             });

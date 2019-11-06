@@ -1,17 +1,16 @@
+using System;
+
 namespace AreaCalculator.Lib
 {
     public class GreaterThanZeroDouble
     {
-        private readonly double _value;
-
-        public GreaterThanZeroDouble(double length)
+        public GreaterThanZeroDouble(double value)
         {
-            if (!(length > 0))
-                throw new IsNotGreaterThanZeroException(length);
-
-            _value = length;
+            if (!(value > 0))
+                throw new ArgumentOutOfRangeException(nameof(value), value, "value < 0") { Source = typeof(GreaterThanZeroDouble).FullName };
+            Value = value;
         }
 
-        public double Value => _value;
+        public double Value { get; }
     }
 }

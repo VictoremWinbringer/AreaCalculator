@@ -1,19 +1,30 @@
-﻿using System;
+﻿using AreaCalculator.Lib;
+using System;
 using System.Collections.Generic;
-using AreaCalculator.Lib;
+using System.Linq;
 
 namespace AreaCalculator
 {
     class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-               List<IFigure> figures = new List<IFigure>()
-               {
-                   new Circle(2),
-                   new Triangle(2, 3, 4)
-               };
-                figures.ForEach(f=> Console.WriteLine(f.Square.Value.ToString()));
+
+            var factory = new ShapeFactory();
+            while (true)
+            {
+                var circle = Console.ReadLine();
+                var rectange = Console.ReadLine();
+                var result = new[] { circle, rectange }
+                    .Select(s => s.Split(":", StringSplitOptions.RemoveEmptyEntries))
+                    .Select(sa => (sa[0], sa[1].Split("x", StringSplitOptions.RemoveEmptyEntries).Select(s => double.Parse(s)).ToArray()))
+                    .Select(sa => factory.Create(sa.Item1, sa.Item2))
+                    .Select(s => $"Area:{s.Area.Value}, Perimeter: {s.Perimeter.Value}");
+                foreach (var r in result)
+                {
+                    Console.WriteLine(r);
+                }
+            }
         }
     }
 }
